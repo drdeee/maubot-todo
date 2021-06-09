@@ -1,0 +1,8 @@
+maubot: 0.1.0
+id: re.fffutu.todo
+version: 1.0.0
+license: MIT
+modules:
+  - todolist
+main_class: TodoListPlugin
+database: true
