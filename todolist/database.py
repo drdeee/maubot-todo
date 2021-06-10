@@ -34,9 +34,7 @@ class TodoListDatabase:
         todo_list = {}
         todos = self.db.execute(self.todos.select().where(self.todos.c.room_id == room_id)).fetchall()
         for todo in todos:
-            self.plugin.log.info(todo)
             todo_list[todo.id] = todo.content
-            self.plugin.log.info(todo_list)
         return todo_list
 
     def todo_entry_exsists(self, room_id: str, todo_id: int) -> bool:

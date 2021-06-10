@@ -18,8 +18,8 @@ class TodoListPlugin(Plugin):
             await evt.respond("Die Todoliste hat keine Einträge. Erstelle einen mit `!todo add <Eintrag>`")
         else:
             todo: str = ""
-            for todo_id in sorted(todo_list):
-                todo = todo + f"- [{todo_id}] {todo_list[todo_id]}\n"
+            for index, todo_id in enumerate(sorted(todo_list)):
+                todo = todo + f"{index + 1}. {todo_list[todo_id]} - ID: {todo_id}\n"
             await evt.respond(f"**Todo-Liste:**\n\n{todo}")
 
     @todo.subcommand("add", help="Fügt einen Eintrag zur Todoliste dieses Raumes hinzu.", aliases=["new", "put"])
